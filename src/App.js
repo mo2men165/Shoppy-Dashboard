@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import React from 'react'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { HashRouter, Route, Routes } from 'react-router-dom'
 import { Navbar, Footer, Sidebar, ThemeSettings } from './components';
 import { Ecommerce, Orders, Calendar, Employees, Stacked, Pyramid, Customers, Kanban, Line, Area, Bar, Pie, Financial, ColorPicker, ColorMapping, Editor } from './pages';
 
@@ -13,7 +13,7 @@ const App = () => {
   const { activeMenu, themeSettings, setThemeSettings, currentColor, currentMode } = useStateContext(); 
   return (
     <div className={currentMode === 'Dark' ? 'dark' : ''}>
-      <BrowserRouter>
+      <HashRouter>
         <div className='flex relative dark:bg-main-dark-bg'>
           <div className='fixed right-4 bottom-4' style={{zIndex: '1000'}}>
             <TooltipComponent
@@ -64,7 +64,7 @@ const App = () => {
             </div>
         </div>
         </div>
-      </BrowserRouter>
+      </HashRouter>
     </div>
   )
 }
